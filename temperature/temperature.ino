@@ -11,7 +11,7 @@ void setup() {
 }
 
 
-void loop() {ыы
+void loop() {
   sen.read();
   Serial.print(sen.getHumidity());
   QDH.displayHumidity(sen.getHumidity());
