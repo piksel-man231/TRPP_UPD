@@ -1,9 +1,21 @@
-void setup() {
-  // put your setup code here, to run once:
+#include <TroykaButton.h>
 
+TroykaButton btn(1);
+ 
+void setup()
+{
+  Serial.begin(9600);
+  btn.begin();
 }
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
+ 
+void loop()
+{
+  static bool flag = false;
+ if (btn.isClick()){
+    flag = !flag;
+    if (flag){
+        QDT.clear();
+        QDH.clear();
+    };
+  };
 }
